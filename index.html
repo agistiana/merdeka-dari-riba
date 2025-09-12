@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERDEKA DARI RIBA - LUNAS HUTANG</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --secondary: #10b981;
+        --accent: #f59e0b;
+        --dark: #1e293b;
+        --light: #f8fafc;
+        --danger: #ef4444;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--light);
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo i {
+        margin-right: 10px;
+        color: var(--accent);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 2rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: var(--accent);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 8rem 0 5rem;
+        background: linear-gradient(
+            rgba(30, 64, 175, 0.8),
+            rgba(30, 64, 175, 0.9)
+          ),
+          url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232563eb"/><path d="M0 0L100 100" stroke="%231e40af" stroke-width="2"/><path d="M100 0L0 100" stroke="%231e40af" stroke-width="2"/></svg>');
+        background-size: cover;
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        animation: fadeInUp 1s ease;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1.2s ease;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        animation: fadeInUp 1.4s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+      }
+
+      /* Problem Section */
+      .problem {
+        padding: 5rem 0;
+        background-color: white;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--accent);
+        border-radius: 2px;
+      }
+
+      .threat-messages {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .threat-card {
+        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+        border-left: 5px solid var(--danger);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        animation: fadeIn 0.8s ease;
+      }
+
+      .threat-card p {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .threat-card .time {
+        font-size: 0.9rem;
+        color: #64748b;
+        text-align: right;
+      }
+
+      /* Package Contents Section */
+      .package-contents {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+      }
+
+      .package-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .package-category {
+        background-color: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .package-category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .category-header {
+        background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .category-header h3 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+
+      .category-body {
+        padding: 1.5rem;
+      }
+
+      .package-list {
+        list-style: none;
+      }
+
+      .package-list li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+      }
+
+      .package-list li:last-child {
+        border-bottom: none;
+      }
+
+      .package-list li::before {
+        content: "✓";
+        color: var(--secondary);
+        font-weight: bold;
+        margin-right: 10px;
+        background-color: #f0fdf4;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Solution Section */
+      .solution {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+      }
+
+      .solution-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+      }
+
+      .solution-card {
+        background-color: white;
+        border-radius: 12px;
+        overflow: hidden;
+        width: 300px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        animation: fadeIn 0.8s ease;
+      }
+
+      .solution-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .solution-card-header {
+        background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .solution-card-body {
+        padding: 1.5rem;
+      }
+
+      .solution-card-body ul {
+        list-style: none;
+        margin-bottom: 1.5rem;
+      }
+
+      .solution-card-body ul li {
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .solution-card-body ul li i {
+        color: var(--secondary);
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+
+      .member-count {
+        background-color: #eff6ff;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 600;
+        color: var(--primary);
+        display: inline-block;
+        margin-top: 1rem;
+      }
+
+      /* Testimonial Section */
+      .testimonials {
+        padding: 5rem 0;
+        background-color: white;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .testimonial-card {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        animation: fadeIn 0.8s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-right: 1rem;
+      }
+
+      .testimonial-info h3 {
+        margin-bottom: 0.2rem;
+        color: var(--dark);
+      }
+
+      .testimonial-info p {
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+
+      .testimonial-content {
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+
+      .testimonial-highlight {
+        background-color: var(--accent);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 4px;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+
+      /* Pricing Section */
+      .pricing {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+        text-align: center;
+      }
+
+      .price-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .original-price {
+        font-size: 1.5rem;
+        text-decoration: line-through;
+        color: #64748b;
+        margin-bottom: 0.5rem;
+      }
+
+      .discount-price {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .discount-badge {
+        background-color: var(--accent);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 2rem;
+      }
+
+      .whatsapp-cta {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background-color: #f0f9ff;
+        border-radius: 8px;
+      }
+
+      .whatsapp-cta p {
+        margin-bottom: 1rem;
+      }
+
+      /* Viral Content Section */
+      .viral-content {
+        padding: 5rem 0;
+        background-color: white;
+      }
+
+      .viral-intro {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        text-align: center;
+      }
+
+      .content-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .category-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .category-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--accent);
+      }
+
+      .category-list {
+        list-style: none;
+      }
+
+      .category-list li {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .category-list li::before {
+        content: "•";
+        color: var(--accent);
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      /* Steps Section */
+      .steps {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+      }
+
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .step-card {
+        text-align: center;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .step-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0 auto 1.5rem;
+      }
+
+      .step-card h3 {
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      /* Features Section */
+      .features {
+        padding: 5rem 0;
+        background-color: white;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        animation: fadeIn 0.8s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      /* Bonus Section */
+      .bonus {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .bonus-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .bonus-amount {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin: 1.5rem 0;
+      }
+
+      .bonus h2 {
+        color: #ffffff;
+      }
+
+      .bonus-cta {
+        margin-top: 2rem;
+      }
+
+      .bonus-list {
+        text-align: left;
+        max-width: 600px;
+        margin: 2rem auto;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 8px;
+      }
+
+      .bonus-list ul {
+        list-style: none;
+      }
+
+      .bonus-list li {
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .bonus-list li::before {
+        content: "✓";
+        color: var(--accent);
+        font-weight: bold;
+        margin-right: 10px;
+        background-color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .gallery {
+        padding: 5rem 0;
+        background-color: white;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      .gallery-item {
+        text-align: center;
+      }
+      .gallery-item img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0.8rem;
+      }
+
+      .guidance {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+      }
+      .guidance-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 2rem;
+      }
+      .guidance-card {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      .guidance-card .step-number {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        font-weight: 600;
+        line-height: 40px;
+        margin-bottom: 1rem;
+      }
+
+      /* Checklist Section */
+      .checklist {
+        padding: 5rem 0;
+        background-color: white;
+      }
+
+      .checklist-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        padding: 2.5rem;
+        border-radius: 12px;
+      }
+
+      .checklist-item {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .checklist-item input[type="checkbox"] {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Order Section */
+      .order {
+        padding: 5rem 0;
+        background-color: white;
+      }
+
+      .order-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .order-steps {
+        margin-bottom: 2rem;
+      }
+
+      .order-step {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .order-step::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+      }
+
+      .order-form {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+
+      .payment-methods {
+        margin: 2rem 0;
+      }
+
+      .payment-title {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .payment-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .payment-option {
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .payment-option:hover {
+        background-color: #eff6ff;
+        border-color: var(--primary);
+      }
+
+      .payment-option input {
+        margin-right: 10px;
+      }
+
+      .disclaimer {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background-color: #fef2f2;
+        border-left: 4px solid var(--danger);
+        border-radius: 4px;
+      }
+
+      .disclaimer h4 {
+        color: var(--danger);
+        margin-bottom: 0.5rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 3rem 0 2rem;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+        color: white;
+      }
+
+      .footer-section h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background-color: var(--accent);
+      }
+
+      .contact-info {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .contact-info p {
+        display: flex;
+        align-items: center;
+        color: #cbd5e1;
+      }
+
+      .contact-info i {
+        margin-right: 10px;
+        color: var(--accent);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #94a3b8;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        nav ul {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 70px);
+          background-color: var(--primary);
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+
+        nav ul.active {
+          left: 0;
+        }
+
+        nav ul li {
+          margin: 1.5rem 0;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .order-container {
+          padding: 1.5rem;
+        }
+
+        .payment-options {
+          grid-template-columns: 1fr;
+        }
+
+        .testimonial-grid,
+        .content-categories,
+        .steps-grid,
+        .features-grid,
+        .package-categories {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero {
+          padding: 6rem 0 3rem;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .cta-button {
+          padding: 0.8rem 1.8rem;
+          font-size: 1rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .bonus-amount,
+        .discount-price {
+          font-size: 2.2rem;
+        }
+
+        .order-form {
+          padding: 1.5rem;
+        }
+
+        .price-container {
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <i class="fas fa-hands-helping"></i>
+          <span>MERDEKA DARI RIBA</span>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+          <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#masalah">Masalah</a></li>
+            <li><a href="#paket">Paket</a></li>
+            <li><a href="#solusi">Solusi</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#harga">Harga</a></li>
+            <li><a href="#konten">Konten</a></li>
+            <!-- <li><a href="#bonus">Bonus</a></li> -->
+            <li><a href="#pemesanan">Pesan</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <h1>MERDEKA DARI RIBA, LUNAS HUTANG 100 JUTA</h1>
+        <p>
+          Bergabunglah dengan komunitas kami dan temukan cara bebas dari hutang
+          riba sambil membangun keterampilan digital yang menghasilkan
+        </p>
+        <a href="#pemesanan" class="cta-button"
+          >GABUNG SEKARANG <i class="fas fa-arrow-right"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="masalah">
+      <div class="container">
+        <div class="section-title">
+          <h2>MASALAH YANG SERING DIHADAPI</h2>
+          <p>Ancaman dan tekanan dari penagih hutang yang tidak manusiawi</p>
+        </div>
+
+        <div class="threat-messages">
+          <div class="threat-card">
+            <p>
+              "Bayar utang pinjol lu skrg! Foto selfie lu yg sdh gua edit bugil
+              gua sebar, foto KTP dan DATA DATA lu gua sebar ke semua sosmed
+              biar lu viral!"
+            </p>
+            <p class="time">TODAY 15:09</p>
+          </div>
+
+          <div class="threat-card">
+            <p>
+              "LO BAYAR HUTANG LO, JANGAN SAMPE LO DAN KELUARGA LO GW CARI BUAT
+              KELARIN NI URUSAN, GW TUNGGU SAMPE MALAM INI!"
+            </p>
+            <p class="time">NOW</p>
+          </div>
+
+          <div class="threat-card">
+            <p>
+              "WOY BAYAR NIH UTANG LU JANGAN SAMPE GUA TELFONIN SMUA KONTAK YANG
+              ADA DI HP LU!!!"
+            </p>
+            <p class="time">RECENT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Package Contents Section -->
+    <section class="package-contents" id="paket">
+      <div class="container">
+        <div class="section-title">
+          <h2>ISI PAKET PEMBELIAN</h2>
+          <p>
+            Dapatkan lebih dari 67 materi dan tools premium yang dikelompokkan
+            dalam kategori
+          </p>
+        </div>
+
+        <div class="package-categories">
+          <div class="package-category">
+            <div class="category-header">
+              <h3>Digital Marketing</h3>
+            </div>
+            <div class="category-body">
+              <ul class="package-list">
+                <li>Mahir Website</li>
+                <li>Jago Ngemail</li>
+                <li>Jago Telegram</li>
+                <li>Jago WhatsApp</li>
+                <li>Mahir Facebook</li>
+                <li>Jago Instagram</li>
+                <li>Jago Copywriting</li>
+                <li>Jago Landing Page</li>
+                <li>Jago Lead Magnet</li>
+                <li>Facebook Ads</li>
+                <li>Digital Marketing</li>
+                <li>Riset Marketing</li>
+                <li>Viral Mastery</li>
+                <li>Branding Marketing</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="package-category">
+            <div class="category-header">
+              <h3>Platform E-Commerce</h3>
+            </div>
+            <div class="category-body">
+              <ul class="package-list">
+                <li>Jago Shopee</li>
+                <li>Jago Tokopedia</li>
+                <li>Jago Lazada</li>
+                <li>Sales Page Profit</li>
+                <li>3000 Instagram</li>
+                <li>2300 Email Profit</li>
+                <li>4000 Email Profit</li>
+                <li>Kelas TikTok Bisnis</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="package-category">
+            <div class="category-header">
+              <h3>Produktivitas & Tools</h3>
+            </div>
+            <div class="category-body">
+              <ul class="package-list">
+                <li>WordPress</li>
+                <li>Power Point</li>
+                <li>Canva Mastery</li>
+                <li>Google Slide Mastery</li>
+                <li>Jago Elementor</li>
+                <li>Video Creation</li>
+                <li>Sales Video Mastery</li>
+                <li>Automation Building</li>
+                <li>Productive</li>
+                <li>Webinar Profit</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="package-category">
+            <div class="category-header">
+              <h3>Komunitas & Leadership</h3>
+            </div>
+            <div class="category-body">
+              <ul class="package-list">
+                <li>Membership</li>
+                <li>Community</li>
+                <li>Team Building</li>
+                <li>Content Building</li>
+                <li>Influencer</li>
+                <li>Telegram Domination</li>
+                <li>Social Media Domination</li>
+                <li>FB Group Domination</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="package-category">
+            <div class="category-header">
+              <h3>Templates & Resources</h3>
+            </div>
+            <div class="category-body">
+              <ul class="package-list">
+                <li>50 Template Undangan Cetak</li>
+                <li>94 Template Undangan Video Digital</li>
+                <li>200 Feed Instagram</li>
+                <li>100+ Font Pack</li>
+                <li>Template ID Card</li>
+                <li>Template Media Sosial</li>
+                <li>Template Mosaic Love</li>
+                <li>Template Wall Decor Kaligrafi</li>
+                <li>Template Wisuda</li>
+                <li>Vector Pria & Wanita</li>
+                <li>500+ Foto Model AI</li>
+                <li>Sound Effect Pack</li>
+                <li>Karakter Adat Indonesia</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="package-category">
+            <div class="category-header">
+              <h3>Bonus & Kelas Tambahan</h3>
+            </div>
+            <div class="category-body">
+              <ul class="package-list">
+                <li>Canva Mobile Class</li>
+                <li>IM Kick Stars</li>
+                <li>Presentation Building</li>
+                <li>Panduan Hidup Bahagia & Do'a</li>
+                <li>Aplikasi Pendukung</li>
+                <li>Modul Instagram</li>
+                <li>Poster Story Instagram</li>
+                <li>Video Panduan Bisnis Online</li>
+                <li>Free Traffic Money</li>
+                <li>Desain Grafis Professional</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bonus Section -->
+    <section class="bonus" id="bonus">
+      <div class="container">
+        <div class="section-title">
+          <h2>BONUS PRODUK DIGITAL SENILAI 3,5 JUTA</h2>
+          <p>Dapatkan bonus spesial ketika bergabung hari ini</p>
+        </div>
+
+        <div class="bonus-content">
+          <div class="bonus-amount">Rp 3.500.000</div>
+
+          <div class="bonus-list">
+            <ul>
+              <li>1 Paket Panduan dan File Lunas Hutang</li>
+              <li>Format File Pdf, Word, Excel, Power Point</li>
+              <li>Format File ZIP dan Video</li>
+              <li>Akses Unlimited Folder dan File</li>
+            </ul>
+          </div>
+
+          <p>Klaim bonus dengan share konten dan follow akun TikTok kami</p>
+
+          <div class="bonus-cta">
+            <a href="#pemesanan" class="cta-button"
+              >KLAIM BONUS SEKARANG <i class="fas fa-gift"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="solusi">
+      <div class="container">
+        <div class="section-title">
+          <h2>SOLUSI KAMI</h2>
+          <p>
+            Bergabung dengan komunitas yang mendukung kebebasan finansial tanpa
+            riba
+          </p>
+        </div>
+
+        <div class="solution-content">
+          <div class="solution-card">
+            <div class="solution-card-header">
+              <h3>BERNAFAS TANPA RIBA</h3>
+            </div>
+            <div class="solution-card-body">
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Komunitas support</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Panduan step-by-step
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Konsultasi finansial
+                </li>
+                <li><i class="fas fa-check-circle"></i> Tips bebas hutang</li>
+              </ul>
+              <span class="member-count"
+                ><i class="fas fa-users"></i> 1013 Anggota</span
+              >
+            </div>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-card-header">
+              <h3>MERDEKA DARI RIBA</h3>
+            </div>
+            <div class="solution-card-body">
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Kelas online</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Workshop digital skills
+                </li>
+                <li><i class="fas fa-check-icon"></i> Networking</li>
+                <li><i class="fas fa-check-circle"></i> Mentorship program</li>
+              </ul>
+              <span class="member-count"
+                ><i class="fas fa-users"></i> 406 Anggota</span
+              >
+            </div>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-card-header">
+              <h3>LUNAS HUTANG</h3>
+            </div>
+            <div class="solution-card-body">
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Success stories</li>
+                <li><i class="fas fa-check-circle"></i> Strategi pelunasan</li>
+                <li><i class="fas fa-check-circle"></i> Income generating</li>
+                <li><i class="fas fa-check-circle"></i> Dukungan komunitas</li>
+              </ul>
+              <span class="member-count"
+                ><i class="fas fa-users"></i> 357 Anggota</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimoni">
+      <div class="container">
+        <div class="section-title">
+          <h2>TESTIMONI SUKSES</h2>
+          <p>Cerita nyata dari anggota yang berhasil melunasi hutangnya</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div
+                class="testimonial-avatar"
+                style="
+                  background-image: url(./img/pns-atau-pegawai-swasta.jpg);
+                  background-position: center;
+                  background-size: cover;
+                "
+              ></div>
+              <div class="testimonial-info">
+                <h3>Supriyatna</h3>
+                <p>Karyawan Swasta</p>
+              </div>
+            </div>
+            <div class="testimonial-content">
+              <p>"Mudah, cepat, dan akurat ...Hutang 80 Juta Lunas 5 Bulan."</p>
+            </div>
+            <div class="testimonial-highlight">LUNAS 80 JUTA</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div
+                class="testimonial-avatar"
+                style="
+                  background-image: url(./img/ibu-rumah-tangga.jpg);
+                  background-position: center;
+                  background-size: cover;
+                "
+              ></div>
+              <div class="testimonial-info">
+                <h3>Siti Fatimah</h3>
+                <p>Ibu Rumah Tangga</p>
+              </div>
+            </div>
+            <div class="testimonial-content">
+              <p>
+                "Alhamdulillah Modal Minim Bisa LUNAS HUTANG 45 Juta dalam 3
+                Bulan 😊"
+              </p>
+            </div>
+            <div class="testimonial-highlight">LUNAS 45 JUTA</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div
+                class="testimonial-avatar"
+                style="
+                  background-image: url(./img/mahasiswi.jpg);
+                  background-position: center;
+                  background-size: cover;
+                "
+              ></div>
+              <div class="testimonial-info">
+                <h3>Shintiya Sultani</h3>
+                <p>Mahasiswi</p>
+              </div>
+            </div>
+            <div class="testimonial-content">
+              <p>
+                "Awalnya aku ragu berjualan produk digital. Setelah 2 hari
+                belajar dan langsung jual produknya alhamdulillah hutangku LUNAS
+                semua 4 Bulan 67 Juta."
+              </p>
+            </div>
+            <div class="testimonial-highlight">LUNAS 67 JUTA</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div
+                class="testimonial-avatar"
+                style="
+                  background-image: url(./img/o3mjy42cebc14redax8l.jpg);
+                  background-position: center;
+                  background-size: cover;
+                "
+              ></div>
+              <div class="testimonial-info">
+                <h3>Rina Juliana</h3>
+                <p>Iibu Rumah Tangga</p>
+              </div>
+            </div>
+            <div class="testimonial-content">
+              <p>
+                "Awalnya saya pesimis... saya cuma ibu rumah tangga biasa,
+                gaptek pula. Hutang saya numpuk sampai 89 juta. Tapi dengan
+                modal cuma Rp499.000, dalam waktu 6 bulan, hutang saya lunas 89
+                juta!"
+              </p>
+            </div>
+            <div class="testimonial-highlight">LUNAS 89 JUTA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documentation Gallery Section -->
+    <section class="gallery" id="galeri">
+      <div class="container">
+        <div class="section-title">
+          <h2>DOKUMENTASI GALERI</h2>
+          <p>Kumpulan momen inspiratif perjalanan anggota melunasi hutang</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="./img/zoom1.jpeg" alt="Testimoni Anggota" />
+            <p>Lunas Hutang 45 Juta dalam 3 Bulan</p>
+          </div>
+          <div class="gallery-item">
+            <img src="./img/zoom2.jpeg" alt="Testimoni Anggota" />
+            <p>Lunas Hutang 67 Juta dalam 4 Bulan</p>
+          </div>
+          <div class="gallery-item">
+            <img src="./img/zoom3.webp" alt="Testimoni Anggota" />
+            <p>Lunas Hutang 89 Juta dalam 6 Bulan</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sharing Guidance Section -->
+    <section class="guidance" id="panduan">
+      <div class="container">
+        <div class="section-title">
+          <h2>PANDUAN BERBAGI PELUNASAN HUTANG</h2>
+          <p>Motivasi orang lain dengan kisah suksesmu</p>
+        </div>
+
+        <div class="guidance-steps">
+          <div class="guidance-card">
+            <span class="step-number">1</span>
+            <h3>Tulis Cerita Singkat</h3>
+            <p>
+              Ceritakan hutang awalmu, tantangan yang dihadapi, dan bagaimana
+              kamu berproses.
+            </p>
+          </div>
+
+          <div class="guidance-card">
+            <span class="step-number">2</span>
+            <h3>Bagikan Progress</h3>
+            <p>
+              Update rutin (mingguan/bulanan) untuk menunjukkan konsistensi.
+            </p>
+          </div>
+
+          <div class="guidance-card">
+            <span class="step-number">3</span>
+            <h3>Sertakan Bukti</h3>
+            <p>
+              Foto/rekap pembayaran (sensor data sensitif) agar inspirasi lebih
+              nyata.
+            </p>
+          </div>
+
+          <div class="guidance-card">
+            <span class="step-number">4</span>
+            <h3>Posting di Komunitas</h3>
+            <p>
+              Gunakan WhatsApp Group atau Telegram agar anggota lain bisa
+              termotivasi.
+            </p>
+          </div>
+
+          <div class="guidance-card">
+            <span class="step-number">5</span>
+            <h3>Ajak Orang Lain</h3>
+            <p>
+              Semakin banyak yang berbagi, semakin kuat semangat untuk melunasi
+              hutang bersama.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="harga">
+      <div class="container">
+        <div class="section-title">
+          <h2>HARGA SPESIAL</h2>
+          <p>Investasi kecil untuk kebebasan finansial yang besar</p>
+        </div>
+
+        <div class="price-container">
+          <div class="original-price">Rp 4.999.000</div>
+          <div class="discount-price">Rp 499.000</div>
+          <div class="discount-badge">Harga Spesial Hanya Hari Ini!</div>
+
+          <p>
+            Dapatkan akses penuh ke semua materi, bimbingan, dan komunitas
+            dengan harga spesial yang sangat terjangkau.
+          </p>
+
+          <a href="#pemesanan" class="cta-button"
+            >PESAN SEKARANG <i class="fas fa-shopping-cart"></i
+          ></a>
+
+          <div class="whatsapp-cta">
+            <p>Hubungi Admin Untuk Masuk WhatsApp Group</p>
+            <p><strong>0877 1124 4516</strong></p>
+            <p>Kirim Bukti Pembelian Produk</p>
+            <p>
+              <small>Format: Nama Lengkap_Produk Digital_Total Hutang</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Viral Content Section -->
+    <section class="viral-content" id="konten">
+      <div class="container">
+        <div class="section-title">
+          <h2>TAHUKAH KAMU?</h2>
+          <p>
+            Konten viral seringkali berasal dari konten yang bermanfaat,
+            menghibur, atau unik
+          </p>
+        </div>
+
+        <div class="viral-intro">
+          <p>
+            Kami menyediakan stok konten viral tanpa harus buat sendiri! Video
+            yang kami kirimkan:
+          </p>
+          <ul>
+            <li>Format portrait (9:16) - Siap Upload Ke Semua Platform</li>
+            <li>Full HD - Kualitas gambar jernih dan profesional</li>
+            <li>Durasi variatif - Fleksibel Untuk berbagai jenis konten</li>
+            <li>Non Copyright - Aman digunakan tanpa takut klaim hak cipta</li>
+            <li>Tanpa Watermark - Siap Untuk Branding Langsung</li>
+          </ul>
+        </div>
+
+        <div class="content-categories">
+          <div class="category-card">
+            <h3>HIBURAN & VIRAL</h3>
+            <ul class="category-list">
+              <li>5000+ Video Lucu/Kocak</li>
+              <li>3000+ Video Hiburan</li>
+              <li>1500+ Video Gagal Lucu</li>
+              <li>1500+ Video Review Outfit</li>
+              <li>1000+ Video Mainan</li>
+              <li>1000+ Video Satisfying/ASMR</li>
+            </ul>
+          </div>
+
+          <div class="category-card">
+            <h3>FILM & SERIES</h3>
+            <ul class="category-list">
+              <li>3500+ Video Film Umum</li>
+              <li>7000+ Video Drama Korea</li>
+              <li>6500+ Video Film Barat</li>
+              <li>4000+ Video Anime</li>
+              <li>2000+ Video Horor</li>
+            </ul>
+          </div>
+
+          <div class="category-card">
+            <h3>MOTIVASI & EMOSI</h3>
+            <ul class="category-list">
+              <li>6000+ Video Motivasi</li>
+              <li>3500+ Video Motivasi Tambahan</li>
+              <li>1800+ Video Baper/Galau</li>
+              <li>1500+ Video Quote Bijak</li>
+            </ul>
+          </div>
+
+          <div class="category-card">
+            <h3>HEWAN LUCU</h3>
+            <ul class="category-list">
+              <li>1000+ Video Kucing</li>
+              <li>1500+ Video Kucing & Anjing lucu</li>
+            </ul>
+          </div>
+
+          <div class="category-card">
+            <h3>ALAM & PEMANDANGAN</h3>
+            <ul class="category-list">
+              <li>4000+ Video Pemandangan</li>
+              <li>1000+ Video Alam Pemandangan</li>
+              <li>2000+ Video Alam Pemandangan & Perjalanan</li>
+            </ul>
+          </div>
+
+          <div class="category-card">
+            <h3>KECANTIKAN & FASHION</h3>
+            <ul class="category-list">
+              <li>1000+ Video Make Up</li>
+              <li>1000+ Video Cantik/Glow Up</li>
+              <li>4000+ Video Sepatu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps">
+      <div class="container">
+        <div class="section-title">
+          <h2>5 LANGKAH MUDAH</h2>
+          <p>Menuju kebebasan finansial tanpa riba</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Download</h3>
+            <p>
+              Semua video dan file yang sudah kami kumpulkan, tinggal akses
+              Google Drive-nya
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Pelajari</h3>
+            <p>Metode & panduan step by step yang mudah dipahami</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Upload</h3>
+            <p>Pilih platform favoritmu: TikTok, IG, Shorts, Facebook</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Konsisten</h3>
+            <p>Nikmati engagement tinggi tanpa stress mikirin konten</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <h3>Lunas Hutang</h3>
+            <p>Hindari dan jauhi hutang riba selamanya</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="fitur">
+      <div class="container">
+        <div class="section-title">
+          <h2>KEAHLIAN YANG AKAN ANDA DAPATKAN</h2>
+          <p>Lebih dari 60 keahlian digital yang menghasilkan</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Mahir Website</h3>
+            <p>Membangun website profesional dari nol hingga mahir</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Jago Ngemail</h3>
+            <p>Email marketing yang menghasilkan konversi tinggi</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fab fa-telegram"></i>
+            </div>
+            <h3>Jago Telegram</h3>
+            <p>Membangun komunitas dan bisnis melalui Telegram</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>Jago WhatsApp</h3>
+            <p>Strategi marketing efektif melalui WhatsApp</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <h3>Jago Instagram</h3>
+            <p>Memaksimalkan Instagram untuk bisnis dan branding</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-pencil-alt"></i>
+            </div>
+            <h3>Jago Copywriting</h3>
+            <p>Seni menulis yang menjual dan mengkonversi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checklist Section -->
+    <section class="checklist">
+      <div class="container">
+        <div class="section-title">
+          <h2>APAKAH KAMU TERMASUK ORANG YANG...</h2>
+          <p>Jika iya, maka program ini cocok untuk kamu!</p>
+        </div>
+
+        <div class="checklist-container">
+          <div class="checklist-item">
+            <input type="checkbox" checked disabled />
+            <label>Capek bikin konten & ngedit</label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" checked disabled />
+            <label
+              >Sibuk dengan kegiatan offline sampai enggak sempat mikirin
+              konten?</label
+            >
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" checked disabled />
+            <label
+              >Nggak punya keahlian Copywriting yang bisa menyentuh hati?</label
+            >
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" checked disabled />
+            <label>Belum jago editing video yang menarik perhatian?</label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" checked disabled />
+            <label>Sering bingung mau upload apa yang berpotensi viral?</label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" checked disabled />
+            <label>Tidak punya stok konten siap pakai buat media sosial?</label>
+          </div>
+
+          <p style="margin-top: 1.5rem; font-weight: 600">
+            Kalau <span style="color: var(--accent)">IYA</span>, berarti kamu
+            butuh solusi yang simple, praktis, dan insyaAllah bermanfaat...
+          </p>
+
+          <div
+            style="
+              margin-top: 1.5rem;
+              padding: 1rem;
+              background-color: #eff6ff;
+              border-radius: 6px;
+            "
+          >
+            <p style="margin: 0">
+              <strong>📌 Cocok Untuk:</strong> Konten Kreator, Dropshipper,
+              Affiliate, Pebisnis digital, Pemula di dunia konten, dan siapa
+              saja yang ingin konsisten posting tanpa ribet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order" id="pemesanan">
+      <div class="container">
+        <div class="section-title">
+          <h2>CARA PEMESANAN</h2>
+          <p>Selangkah lebih dekat menuju kebebasan finansial tanpa riba</p>
+        </div>
+
+        <div class="order-container">
+          <div class="order-steps">
+            <p>
+              Untuk mendapatkan
+              <strong>produk digital & bimbingan eksklusif lunas hutang</strong
+              >, silakan ikuti langkah berikut:
+            </p>
+
+            <div class="order-step">
+              <strong>Isi Biodata Lengkap</strong> - Nama Lengkap, Nomor
+              WhatsApp, Kecamatan, Alamat Lengkap
+            </div>
+
+            <div class="order-step">
+              <strong>Lakukan Pembayaran</strong> - Transfer sesuai nominal yang
+              tertera ke rekening resmi kami
+            </div>
+
+            <div class="order-step">
+              <strong>Konfirmasi Pembayaran</strong> - Setelah transfer, segera
+              kirim bukti pembayaran + biodata lengkap ke Admin: 0877 1124 4516
+              (WhatsApp)
+            </div>
+
+            <div class="order-step">
+              Setelah konfirmasi, Anda akan langsung mendapatkan akses ke produk
+              digital + jadwal bimbingan intensif setiap minggu via Zoom.
+            </div>
+          </div>
+
+          <div class="order-form">
+            <h3
+              style="
+                text-align: center;
+                margin-bottom: 1.5rem;
+                color: var(--primary);
+              "
+            >
+              PESAN SEKARANG!
+            </h3>
+
+            <form id="orderForm">
+              <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" required />
+              </div>
+
+              <div class="form-group">
+                <label for="whatsapp">No. WhatsApp</label>
+                <input type="tel" id="whatsapp" required />
+              </div>
+
+              <div class="form-group">
+                <label for="kecamatan">Kecamatan</label>
+                <input type="text" id="kecamatan" required />
+              </div>
+
+              <div class="form-group">
+                <label for="alamat">Alamat Lengkap</label>
+                <textarea id="alamat" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="catatan">Catatan</label>
+                <textarea id="catatan" required></textarea>
+              </div>
+
+              <div class="payment-methods">
+                <div class="payment-title">Metode Pembayaran:</div>
+
+                <div class="payment-options">
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="bri" required />
+                    <span>Bank Rakyat Indonesia (BRI)</span>
+                  </label>
+
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="bni" />
+                    <span>Bank Negara Indonesia (BNI)</span>
+                  </label>
+
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="bca" />
+                    <span>Bank Central Asia (BCA)</span>
+                  </label>
+
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="bank-syariah" />
+                    <span>Bank Aladin Syariah</span>
+                  </label>
+
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="seabank" />
+                    <span>Bank Seabank Indonesia</span>
+                  </label>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="cta-button"
+                style="width: 100%; text-align: center"
+              >
+                KIRIM PEMESANAN <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+
+            <div class="disclaimer">
+              <h4>Disclaimer:</h4>
+              <p>
+                Perlu diketahui, program ini
+                <strong
+                  >bukan tempat pinjam uang, bukan juga platform pelunasan
+                  instan</strong
+                >. Hutang bisa lunas bukan karena orang lain, tapi karena niat
+                tulus, dorongan kuat, usaha nyata, dan kerja keras diri sendiri.
+              </p>
+              <p>
+                Kami hanya memberikan panduan, arahan, dan bimbingan agar jalan
+                menuju kebebasan finansial lebih terarah. Hasil akhirnya kembali
+                kepada komitmen masing-masing.
+              </p>
+              <p>
+                Mari sama-sama kita buktikan, bahwa dengan tekad
+                sungguh-sungguh, insyaAllah hutang bisa dilunasi. Bergabung
+                bersama kami 😊 @bebashutangid
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>MERDEKA DARI RIBA</h3>
+            <p>
+              Komunitas yang berdedikasi untuk membantu anggota terbebas dari
+              hutang riba melalui pendidikan keuangan dan pengembangan
+              keterampilan digital.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+              <a href="#"><i class="fab fa-telegram"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>KONTAK KAMI</h3>
+            <div class="contact-info">
+              <p><i class="fas fa-phone"></i> +62 877-1124-4516</p>
+              <p><i class="fas fa-envelope"></i> idebebashutang@gmail.com</p>
+              <p><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</p>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>KOMUNITAS KAMI</h3>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-users"></i> Bernafas Tanpa Riba - 1013 anggota
+              </p>
+              <p>
+                <i class="fas fa-users"></i> Merdeka Dari Riba - 406 anggota
+              </p>
+              <p><i class="fas fa-users"></i> Lunas Hutang - 357 anggota</p>
+              <p>
+                <i class="fas fa-users"></i> Pejuang Peluang Lunas Hutang - 408
+                anggota
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 MERDEKA DARI RIBA. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navMenu = document.querySelector("nav ul");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        mobileMenuBtn.innerHTML = navMenu.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            if (navMenu.classList.contains("active")) {
+              navMenu.classList.remove("active");
+              mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+          }
+        });
+      });
+
+      // Animation on scroll
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeInUp 1s ease forwards";
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(
+          ".threat-card, .solution-card, .feature-card, .testimonial-card, .step-card, .category-card, .package-category"
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          observer.observe(el);
+        });
+
+      // Form submission
+      document
+        .getElementById("orderForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const nama = document.getElementById("nama").value;
+          const whatsapp = document.getElementById("whatsapp").value;
+          const kecamatan = document.getElementById("kecamatan").value;
+          const alamat = document.getElementById("alamat").value;
+          const catatan = document.getElementById("catatan").value;
+          const paymentMethod = document.querySelector(
+            'input[name="payment"]:checked'
+          ).value;
+
+          // Create WhatsApp message
+          const message = `Halo, saya ingin bergabung dengan program MERDEKA DARI RIBA. Berikut data saya:%0A%0ANama: ${nama}%0AWhatsApp: ${whatsapp}%0AKecamatan: ${kecamatan}%0AAlamat: ${alamat}%0AMetode Pembayaran: ${paymentMethod}%0ACatatan: ${catatan}`;
+
+          // Open WhatsApp
+          window.open(`https://wa.me/6287711244516?text=${message}`, "_blank");
+
+          // Reset form
+          this.reset();
+
+          // Show success message (you can replace this with a more sophisticated modal)
+          alert(
+            "Terima kasih! Data Anda telah berhasil dikirim. Silakan lanjutkan pembayaran dan konfirmasi melalui WhatsApp."
+          );
+        });
+    </script>
+  </body>
+</html>
